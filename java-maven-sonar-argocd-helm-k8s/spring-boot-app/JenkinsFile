@@ -31,7 +31,7 @@ pipeline {
         stage('Docker Image') {
             steps {
                 echo 'Docker Image building'
-				sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t venkat013/batch13:${BUILD_NUMBER} .'
+				sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t venkat013/batch04:${BUILD_NUMBER} .'
             }
         }	
 
@@ -43,7 +43,7 @@ pipeline {
             sh 'docker login -u venkat013 -p ${dockerhub}'
 			
 			 }
-			   sh 'docker push venkat013/batch13:${BUILD_NUMBER}'
+			   sh 'docker push venkat013/batch04:${BUILD_NUMBER}'
 			   
            
 				}
